@@ -37,12 +37,12 @@ const AboutUs = () => {
             <Text>
               FINDEB is a business corporation specialized and respected
               provider of design, architecture, engineering, and project
-              management services to various industries. FINDEB curriculim
+              management services to various industries. FINDEB curriculum
               features an extensive range of projects intended for the most
-              diverse functions. Its oprations encompass many diverse areas such
-              as health, retail, multi-use buildings, tourism and leisure,
+              diverse functions. Its operations encompass many diverse areas
+              such as health, retail, multi-use buildings, tourism and leisure,
               housing, and services, equipment, fuel installations, industry,
-              infrastructures, planning.
+              infrastructures, and planning.
             </Text>
 
             <Text marginTop="1rem">
@@ -51,13 +51,13 @@ const AboutUs = () => {
               new concepts of environmental engineering, such as: treatment
               ravines, ecological restoration of water lines, natural
               engineering techniques, wind farms, power plants, hydro and
-              photovaltaic parks, etc.
+              photovoltaic parks, etc.
             </Text>
 
             <Text marginTop="1rem">
               In association with partnerships, FINDEB enhances its activity in
               areas of studies and projects, management and supervision of
-              works, consulting, and auditing relevant Projects in Euroope and
+              works, consulting, and auditing relevant Projects in Europe and
               Africa.
             </Text>
           </Box>
