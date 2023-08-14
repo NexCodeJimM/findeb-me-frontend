@@ -58,7 +58,7 @@ export const serviceLists = [
     ],
   },
   {
-    title: "Cost Engineering & Contral",
+    title: "Cost Engineering & Control",
     photo: "/assets/images/service6.png",
     tasks: [
       "Establish cost baseline.",
