@@ -53,6 +53,6 @@ export const brand = [
     photo: "/assets/images/logo.png",
     email: "info@findebme.com",
     phone: "+971 4 580 8141",
-    office: "2706 Prime Tower Business Bay, Dubai, UAE",
+    office: "P.O Box 112037 2706 Prime Tower Business Bay, Dubai, UAE",
   },
 ];
