@@ -1,6 +1,7 @@
 "use client";
+import MissionList from "@/components/AboutPage/Missions/MissionList";
 import PageHeader from "@/components/common/modules/PageHeader/PageHeader";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Image } from "@chakra-ui/react";
 
 const AboutUs = () => {
   return (
@@ -62,6 +63,105 @@ const AboutUs = () => {
             </Text>
           </Box>
         </Flex>
+      </Box>
+
+      {/* Mission */}
+      <Box bgColor="#F1F1F1" marginTop="2rem">
+        <Box maxWidth="1280px" padding="2rem" margin="0 auto">
+          {/* Content */}
+          <Box
+            display="flex"
+            flexDirection={{ base: "column-reverse", sm: "row" }}
+            alignItems="center"
+            justifyContent={{ base: "flex-start", sm: "space-between" }}
+          >
+            {/* Left */}
+            <Box width="100%" textAlign="start">
+              <Text
+                fontSize={{ base: "4xl", sm: "5xl" }}
+                lineHeight="shorter"
+                marginBottom="1rem"
+                fontWeight="light"
+                color="#F9A61A"
+              >
+                Our Mission
+              </Text>
+              <Text color="#797979" fontSize={{ base: "md", sm: "lg" }}>
+                To Improve overall project performance through:
+              </Text>
+
+              <Box>
+                <MissionList />
+              </Box>
+            </Box>
+
+            {/* Right */}
+            <Box
+              width="100%"
+              padding={{ base: "0", sm: "2rem" }}
+              marginY={{ base: "2rem", sm: "2rem" }}
+              display="flex"
+              justifyContent="center"
+            >
+              <Image
+                src="/assets/images/mission1.jpeg"
+                alt="mission-image"
+                borderRadius="lg"
+              />
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Vision */}
+      <Box
+        position="relative"
+        minHeight={{ base: "40vh", sm: "50vh" }}
+        backgroundImage={`url('./assets/images/vision1.jpeg')`}
+        backgroundPosition="center"
+        backgroundSize="cover"
+        backgroundAttachment="fixed"
+      >
+        {/* Tint */}
+        <Box
+          position="absolute"
+          width="100%"
+          height="100%"
+          opacity="0.8"
+          backgroundColor="gray.700"
+        />
+
+        {/* Content */}
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems={{ base: "center", sm: "flex-end" }}
+          maxWidth="1280px"
+          padding="2rem"
+          margin="0 auto"
+          position="absolute"
+          left="0"
+          right="0"
+          bottom="0"
+          top="0"
+        >
+          <Text
+            color="white"
+            fontSize={{ base: "5xl", sm: "8xl" }}
+            fontWeight="light"
+          >
+            Our Vision
+          </Text>
+
+          <Text
+            color="white"
+            fontSize={{ base: "xl", sm: "3xl" }}
+            fontWeight="light"
+          >
+            To be synonymous with excellence in overall project delivery.
+          </Text>
+        </Box>
       </Box>
     </>
   );

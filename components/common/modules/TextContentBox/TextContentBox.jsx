@@ -2,7 +2,12 @@ import { Box, Divider, Text } from "@chakra-ui/react";
 
 const TextContentBox = ({ title, children }) => {
   return (
-    <Box backgroundColor="white" padding="1.5rem" marginBottom="1rem">
+    <Box
+      backgroundColor="white"
+      padding="1.5rem"
+      marginBottom="1rem"
+      shadow="md"
+    >
       <Text
         fontSize="1.5rem"
         fontWeight="light"

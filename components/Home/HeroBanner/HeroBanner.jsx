@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Text, Button } from "@chakra-ui/react";
+import { Box, Text, Button, ButtonGroup, Image } from "@chakra-ui/react";
 import Link from "next/link";
 
 const HeroBanner = () => {
@@ -8,7 +8,7 @@ const HeroBanner = () => {
     // Main Container
     <Box
       position="relative"
-      minHeight={{ base: "70vh", sm: "80vh" }}
+      minHeight={{ base: "60vh", sm: "90vh" }}
       backgroundImage={`url('./assets/images/heroBg.jpeg')`}
       backgroundPosition="center"
       backgroundSize="cover"
@@ -19,18 +19,18 @@ const HeroBanner = () => {
         position="absolute"
         width="100%"
         height="100%"
-        opacity="0.85"
-        backgroundColor="red.700"
+        opacity="0.9"
+        backgroundColor="red.900"
       />
 
       {/* Content */}
       <Box
         display="flex"
-        // flexDirection={{ base: "column", sm: "row" }}
-        flexDirection="column"
+        flexDirection={{ base: "column", sm: "row" }}
+        // flexDirection="column"
         alignItems="center"
-        // justifyContent={{ base: "flex-start", sm: "space-between" }}
-        justifyContent="center"
+        justifyContent={{ base: "flex-start", sm: "space-between" }}
+        // justifyContent="center"
         maxWidth="1280px"
         position="absolute"
         color="white"
@@ -42,8 +42,8 @@ const HeroBanner = () => {
         margin="0 auto"
         padding="2rem"
       >
-        {/* Top */}
-        <Box width="100%" textAlign="center">
+        {/* Left */}
+        <Box width="100%" textAlign="start">
           <Text
             fontSize={{ base: "4xl", sm: "5xl" }}
             lineHeight="shorter"
@@ -54,6 +54,7 @@ const HeroBanner = () => {
             <span
               style={{
                 fontWeight: "bold",
+                bgGradient: "linear(to-l, #7928CA, #FF0080)",
               }}
             >
               Comprehensive Engineering
@@ -72,41 +73,57 @@ const HeroBanner = () => {
             Discover a Path to Collective Growth: From Precise Project Framing
             to Expert Cost Engineering.
           </Text>
+
+          {/* Buttons */}
+          <ButtonGroup marginTop="3rem">
+            <Button
+              padding="1.5rem"
+              position="relative"
+              bgGradient="linear(to-l, #f5b03d, #F9A61A, #f76d16 80%)"
+              overflow="hidden"
+              _before={{
+                position: "absolute",
+                content: `""`,
+                width: "100%",
+                height: "100%",
+                bgGradient: "linear(to-r, #f5b03d, #F9A61A, #f76d16 80%)",
+                transition: "1s",
+              }}
+              _hover={{
+                _before: { opacity: 0 },
+              }}
+              _active={{
+                bg: "#F9A61A",
+              }}
+            >
+              <Text zIndex="1" color={"white"}>
+                Read More
+              </Text>
+            </Button>
+            <Button
+              variant="outline"
+              colorScheme="white"
+              padding="1.5rem"
+              _hover={{ bg: "white", color: "gray.800" }}
+            >
+              Work With Us
+            </Button>
+          </ButtonGroup>
         </Box>
 
-        {/* Bottom */}
+        {/* Right */}
         <Box
           width="100%"
           padding="2rem"
-          color="gray.700"
           marginTop={{ base: "2rem", sm: "2rem" }}
           display="flex"
           justifyContent="center"
         >
-          <Box display="flex" marginX="0.5rem" gap="1rem">
-            <Link href="/services">
-              <Button
-                padding="1.5rem"
-                borderRadius="sm"
-                backgroundColor="#F9A61A"
-                color="white"
-                _hover={{ backgroundColor: "#C77F05" }}
-              >
-                Read More
-              </Button>
-            </Link>
-
-            <Link href="/contact">
-              <Button
-                padding="1.5rem"
-                borderRadius="sm"
-                variant="outline"
-                color="#F9A61A"
-              >
-                Work With Us
-              </Button>
-            </Link>
-          </Box>
+          <Image
+            src="/assets/images/headerphoto.png"
+            alt="header-photo"
+            display={{ base: "none", sm: "block" }}
+          />
         </Box>
       </Box>
     </Box>
