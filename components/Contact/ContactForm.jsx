@@ -12,11 +12,8 @@ import {
 import Link from "next/link";
 
 import { useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import { verifyCaptchaAction } from "../ReCaptcha/Captcha";
 
 const ContactForm = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const initialData = {
     name: "",
     phone: "",
@@ -54,19 +51,17 @@ const ContactForm = () => {
     }
 
     try {
-      const token = await executeRecaptcha("contactForm"); // Unique action name
-      if (!token) {
-        throw new Error("reCAPTCHA token not received.");
-      }
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-      const verified = await verifyCaptchaAction(token);
-
-      if (verified) {
-        // Perform form submission logic here
-
+      if (response.status === 200) {
         // Clear the form after successful submission
         setData({ ...initialData });
-
         toast({
           title: "Success",
           description: "Your message has been sent!",
@@ -78,7 +73,7 @@ const ContactForm = () => {
         // Display error message in a toast
         toast({
           title: "Error",
-          description: "reCAPTCHA verification failed. Please try again.",
+          description: "An error occurred while sending the message.",
           status: "error",
           duration: 5000,
           isClosable: true,
