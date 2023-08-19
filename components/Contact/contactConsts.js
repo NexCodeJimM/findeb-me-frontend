@@ -12,9 +12,13 @@ export const contactDetails = [
     icon: <TbPhone />,
   },
   {
+
     label: "Location",
     title:
       "P.O Box 112037 2706 Prime Tower, Business Bay, Dubai, United Arab Emirates",
+
+    title: "P.O Box 112037 2706 Prime Tower Business Bay, Dubai, UAE",
+
     icon: <TbBuildingCommunity />,
   },
 ];
