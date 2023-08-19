@@ -8,7 +8,7 @@ const HeroBanner = () => {
     // Main Container
     <Box
       position="relative"
-      minHeight={{ base: "60vh", sm: "90vh" }}
+      minHeight={{ base: "70vh", sm: "90vh" }}
       backgroundImage={`url('./assets/images/heroBg.jpeg')`}
       backgroundPosition="center"
       backgroundSize="cover"

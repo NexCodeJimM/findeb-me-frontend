@@ -1,7 +1,7 @@
 "use client";
 
 import PageHeader from "@/components/common/modules/PageHeader/PageHeader";
-import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Text } from "@chakra-ui/react";
 import { contactDetails } from "@/components/Contact/contactConsts";
 import TextContentBox from "@/components/common/modules/TextContentBox/TextContentBox";
 import ContactForm from "@/components/Contact/ContactForm";
@@ -84,7 +84,7 @@ const ContactCard = ({ label, title, icon }) => {
   return (
     <Box
       width="300px"
-      backgroundColor="#F1F1F1"
+      backgroundColor="white"
       fontSize="md"
       alignItems="center"
       display="flex"
@@ -116,11 +116,7 @@ const ContactCard = ({ label, title, icon }) => {
         >
           {label}
         </Text>
-        <Text
-          textAlign="center"
-          color="gray.500"
-          fontSize={{ base: "sm", sm: "md" }}
-        >
+        <Text color="gray.500" fontSize={{ base: "sm", sm: "md" }}>
           {title}
         </Text>
       </Box>

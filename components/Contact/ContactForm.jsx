@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Checkbox,
@@ -6,17 +7,105 @@ import {
   Textarea,
   Text,
   Button,
+  useToast,
 } from "@chakra-ui/react";
-import { useForm } from "react-hook-form";
+import Link from "next/link";
+
+import { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { verifyCaptchaAction } from "../ReCaptcha/Captcha";
 
 const ContactForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const initialData = {
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+    accept: false,
+  };
 
-  const onSubmit = (data) => console.log(data);
+  const [data, setData] = useState({ ...initialData });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const toast = useToast();
+
+  const validateForm = () => {
+    const { name, phone, email, subject, message, accept } = data;
+    return name && phone && email && subject && message && accept;
+  };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    if (!validateForm()) {
+      // Display error message in a toast
+      toast({
+        title: "Error",
+        description: "Please fill out all the required fields.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const token = await executeRecaptcha("contactForm"); // Unique action name
+      if (!token) {
+        throw new Error("reCAPTCHA token not received.");
+      }
+
+      const verified = await verifyCaptchaAction(token);
+
+      if (verified) {
+        // Perform form submission logic here
+
+        // Clear the form after successful submission
+        setData({ ...initialData });
+
+        toast({
+          title: "Success",
+          description: "Your message has been sent!",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        // Display error message in a toast
+        toast({
+          title: "Error",
+          description: "reCAPTCHA verification failed. Please try again.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      // Display error message in a toast
+      toast({
+        title: "Error",
+        description: "An error occurred while sending the message.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (field, value) => {
+    setData((prevData) => ({ ...prevData, [field]: value }));
+  };
+
+  const handleAcceptChange = (e) => {
+    setData((prevData) => ({ ...prevData, accept: e.target.checked }));
+  };
 
   return (
     <Box
@@ -25,45 +114,62 @@ const ContactForm = () => {
       backgroundColor="white"
       color="gray.700"
     >
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={sendEmail}>
         <FormControl>
           <Input
             marginTop="1.3rem"
             id="name"
             type="text"
             placeholder="Full Name"
-            {...register("name", { required: true })}
-          />
-          <Input
-            marginTop="1.3rem"
-            id="email"
-            type="text"
-            placeholder="Email Address"
-            {...register("email", { required: true })}
+            value={data.name}
+            onChange={(e) => setData({ ...data, name: e.target.value })}
           />
           <Input
             marginTop="1.3rem"
             id="phone"
             type="text"
             placeholder="Phone Number"
-            {...register("phone", { required: true })}
+            value={data.phone}
+            onChange={(e) => setData({ ...data, phone: e.target.value })}
+          />
+          <Input
+            marginTop="1.3rem"
+            id="email"
+            type="text"
+            placeholder="Email Address"
+            value={data.email}
+            onChange={(e) => setData({ ...data, email: e.target.value })}
+          />
+          <Input
+            marginTop="1.3rem"
+            id="subject"
+            type="text"
+            placeholder="Subject"
+            value={data.subject}
+            onChange={(e) => setData({ ...data, subject: e.target.value })}
           />
           <Textarea
             marginTop="1.3rem"
             id="message"
             type="textarea"
             placeholder="Message..."
-            {...register("message", { required: true })}
+            value={data.message}
+            onChange={(e) => setData({ ...data, message: e.target.value })}
           />
           <Checkbox
             marginTop="1.3rem"
             id="pdpl"
             type="checkbox"
             placeholder="PDPL"
-            {...register("pdpl", { required: true })}
+            isChecked={data.accept}
+            onChange={handleAcceptChange}
           >
-            <Text fontSize="1rem" color="gray.500">
-              I accept the Privacy Policy and Terms of Service.
+            <Text fontSize={{ base: "sm", sm: "md" }} color="gray.500">
+              I accept the{" "}
+              <Link href="/privacy-policy" target="_blank">
+                Privacy Policy
+              </Link>
+              .
             </Text>
           </Checkbox>
         </FormControl>
@@ -75,8 +181,9 @@ const ContactForm = () => {
           fontSize="md"
           padding="1rem"
           marginTop="2rem"
+          disabled={isSubmitting || !validateForm()}
         >
-          Submit
+          {isSubmitting ? "Submitting..." : "Submit"}
         </Button>
       </form>
     </Box>

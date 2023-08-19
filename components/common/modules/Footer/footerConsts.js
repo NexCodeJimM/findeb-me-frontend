@@ -21,10 +21,6 @@ export const about = [
 
 export const legal = [
   {
-    title: "Terms & Conditions",
-    link: "/terms-and-conditions",
-  },
-  {
     title: "Privacy Policy",
     link: "/privacy-policy",
   },

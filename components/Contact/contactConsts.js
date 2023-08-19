@@ -8,7 +8,7 @@ export const contactDetails = [
   },
   {
     label: "Phone Number",
-    title: "+971 50 891 5830",
+    title: ["+971 50 891 5830", <br />, "+971 50 185 4534"],
     icon: <TbPhone />,
   },
   {

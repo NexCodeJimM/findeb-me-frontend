@@ -1,6 +1,6 @@
 export const Features = [
   {
-    title: "Design, Architecture, Engineering, and Technical Books Development",
+    title: "Design Architecture, Engineering, and Technical Books Development",
     photo: "/assets/images/feature1.jpeg",
     description:
       "Embark on a journey of creativity and knowledge with our curated collection of design, architecture, engineering, and technical books. Whether you're an aspiring professional or a seasoned expert, our carefully crafted selection will fuel your passion for innovation and excellence.",
