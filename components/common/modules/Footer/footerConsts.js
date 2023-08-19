@@ -21,10 +21,6 @@ export const about = [
 
 export const legal = [
   {
-    title: "Terms & Conditions",
-    link: "/terms-and-conditions",
-  },
-  {
     title: "Privacy Policy",
     link: "/privacy-policy",
   },
@@ -52,7 +48,11 @@ export const brand = [
   {
     photo: "/assets/images/logo.png",
     email: "info@findebme.com",
+
+    phone: "+971 50 891 5830",
+
     phone: "+971 4 580 8141",
+
     office: "P.O Box 112037 2706 Prime Tower Business Bay, Dubai, UAE",
   },
 ];

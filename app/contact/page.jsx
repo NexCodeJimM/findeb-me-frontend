@@ -1,12 +1,14 @@
 "use client";
 
 import PageHeader from "@/components/common/modules/PageHeader/PageHeader";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Text } from "@chakra-ui/react";
 import { contactDetails } from "@/components/Contact/contactConsts";
 import TextContentBox from "@/components/common/modules/TextContentBox/TextContentBox";
 import ContactForm from "@/components/Contact/ContactForm";
+import Maps from "@/components/GoogleMaps/Maps";
 
 const Contact = () => {
+  const address = "Prime Tower Businesses bay Dubai UAE";
   return (
     <>
       <PageHeader
@@ -15,29 +17,61 @@ const Contact = () => {
         desc="If you have any questions, we're just one email away!"
       />
 
-      <Box
-        maxWidth="1280px"
-        margin="0 auto"
-        padding="2rem"
-        display="flex"
-        flexDirection="column"
-      >
-        <Flex
-          flexDirection="row"
-          flexWrap="wrap"
-          gap="3rem"
-          justifyContent="center"
-          marginTop="4rem"
+      <Box backgroundColor="#F7F8F9" paddingY="5rem">
+        <Grid
+          templateColumns="repeat(6, 1fr)"
+          gap="5"
+          maxWidth="1280px"
+          margin="0 auto"
         >
-          {contactDetails.map((item) => (
-            <ContactCard key={item.title} {...item} />
-          ))}
-        </Flex>
+          {/* Cards */}
+          <GridItem
+            colSpan={{ base: 6, sm: 2 }}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            {contactDetails.map((item) => (
+              <ContactCard key={item.title} {...item} />
+            ))}
+          </GridItem>
 
-        <Box marginTop="4rem">
-          <TextContentBox title="Contact Form">
-            <ContactForm />
-          </TextContentBox>
+          {/* Form */}
+          <GridItem colSpan={{ base: 6, sm: 4 }}>
+            <TextContentBox title="Send Us A Message">
+              <ContactForm />
+            </TextContentBox>
+          </GridItem>
+        </Grid>
+      </Box>
+
+      <Box maxWidth="1280px" margin="0 auto" padding="2rem">
+        <Box
+          display="flex"
+          justifyContent="center"
+          marginY="2rem"
+          flexDirection="column"
+          textAlign="center"
+        >
+          <Text
+            fontWeight="bold"
+            fontSize="3xl"
+            marginBottom="1rem"
+            color="gray.700"
+          >
+            Find us on Google Maps
+          </Text>
+
+          <Text color="gray.500">
+            Navigate to our precise address effortlessly and explore our
+            physical presence with the convenience of Google Maps. Get accurate
+            directions, explore nearby landmarks, and embark on a seamless
+            journey to connect with us in person.
+          </Text>
+        </Box>
+
+        <Box marginBottom="2rem">
+          <Maps address={address} />
         </Box>
       </Box>
     </>
@@ -46,26 +80,46 @@ const Contact = () => {
 
 export default Contact;
 
-const ContactCard = ({ title, icon }) => {
+const ContactCard = ({ label, title, icon }) => {
   return (
     <Box
       width="300px"
-      backgroundColor="#F1F1F1"
+      backgroundColor="white"
       fontSize="md"
       alignItems="center"
       display="flex"
-      flexDirection="column"
       gap="1rem"
       paddingX="1rem"
-      paddingY="2rem"
+      paddingY="1rem"
       borderRadius="md"
       borderTop="4px solid #FFB800"
       color="#383838"
       shadow="md"
+      marginBottom="2rem"
     >
-      <Box fontSize="3xl">{icon}</Box>
+      <Box
+        bgColor="orange.100"
+        color="#F9A61A"
+        padding="1rem"
+        rounded="full"
+        fontSize="2xl"
+      >
+        {icon}
+      </Box>
 
-      <Text textAlign="center">{title}</Text>
+      <Box display="flex" flexDirection="column">
+        <Text
+          marginBottom="0.3rem"
+          fontWeight="bold"
+          color="gray.800"
+          fontSize={{ base: "sm", sm: "md" }}
+        >
+          {label}
+        </Text>
+        <Text color="gray.500" fontSize={{ base: "sm", sm: "md" }}>
+          {title}
+        </Text>
+      </Box>
     </Box>
   );
 };

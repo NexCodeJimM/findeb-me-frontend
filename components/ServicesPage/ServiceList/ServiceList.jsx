@@ -5,61 +5,95 @@ import {
   Text,
   UnorderedList,
   ListItem,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
 } from "@chakra-ui/react";
 import { serviceLists } from "./serviceConsts";
+import PageHeader from "@/components/common/modules/PageHeader/PageHeader";
 
 const ServiceList = () => {
   return (
     <Flex flexDirection="column" marginTop="4rem">
-      {serviceLists.map((item, index) => (
-        <ServicesListing key={index} {...item} reverse={index % 2 === 1} />
-      ))}
+      <ServicesListing />
     </Flex>
   );
 };
 
-const ServicesListing = ({ title, photo, tasks, reverse }) => {
+const ServicesListing = () => {
   return (
-    <Flex
-      flexDirection={{ base: "column", sm: reverse ? "row-reverse" : "row" }}
-      marginBottom={{ base: "0.5rem", sm: "6rem" }}
-      justifyContent="space-between"
-      gap="2rem"
+    <Tabs
+      orientation="vertical"
+      size={{ base: "md", sm: "lg" }}
+      colorScheme="red"
+      flexDirection={{ base: "column", sm: "row" }}
+      gap="3rem"
     >
-      <Box width={{ base: "20rem", sm: "25rem" }}>
-        <Image
-          src={photo}
-          alt={title}
-          width="100%"
-          borderRadius="md"
-          objectFit="cover"
-        />
-      </Box>
+      <TabList>
+        {serviceLists.map((service, index) => (
+          <Tab key={index}>{service.title}</Tab>
+        ))}
+      </TabList>
 
-      <Box
-        marginLeft={{ base: "0", sm: reverse ? "0" : "3rem" }}
-        marginRight={{ base: "0", sm: reverse ? "3rem" : "0" }}
-      >
-        <Text
-          fontSize={{ base: "2xl", sm: "3xl" }}
-          color="#7B9BA6"
-          fontWeight="bold"
-          marginBottom="1rem"
-        >
-          {title}
-        </Text>
+      <TabPanels>
+        {serviceLists.map((service, index) => (
+          <TabPanel key={index}>
+            <Text
+              marginBottom="2rem"
+              fontSize={{ base: "2xl", sm: "4xl" }}
+              casing="uppercase"
+              fontWeight="bold"
+              color="#F9A61A"
+            >
+              {service.title}
+            </Text>
 
-        <UnorderedList
-          fontSize={{ base: "sm", sm: "lg" }}
-          spacing={{ base: "0", sm: "1rem" }}
-          marginBottom={{ base: "3rem", sm: "2rem" }}
-        >
-          {tasks.map((task, index) => (
-            <ListItem key={index}>{task}</ListItem>
-          ))}
-        </UnorderedList>
-      </Box>
-    </Flex>
+            <Box
+              position="relative"
+              minHeight={{ base: "15vh", sm: "35vh" }}
+              backgroundImage={service.photo}
+              backgroundPosition="left"
+              backgroundSize="cover"
+              rounded="lg"
+              shadow="lg"
+            />
+
+            <Text
+              color="#797979"
+              marginTop="2rem"
+              fontSize={{ base: "sm", sm: "md" }}
+            >
+              {service?.description}
+            </Text>
+
+            <Text
+              color="#797979"
+              marginTop="2rem"
+              fontSize={{ base: "sm", sm: "md" }}
+            >
+              Below are the services we offer:
+            </Text>
+
+            <UnorderedList
+              fontSize={{ base: "sm", sm: "md" }}
+              marginTop="2rem"
+              color="#797979"
+            >
+              {service.tasks.map((task, taskIndex) => (
+                <ListItem
+                  marginY={{ base: "0.5rem", sm: "1rem" }}
+                  key={taskIndex}
+                >
+                  {task}
+                </ListItem>
+              ))}
+            </UnorderedList>
+          </TabPanel>
+        ))}
+      </TabPanels>
+    </Tabs>
   );
 };
 
