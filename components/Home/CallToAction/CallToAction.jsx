@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 const CallToAction = () => {
   return (
@@ -17,7 +18,9 @@ const CallToAction = () => {
           </Box>
 
           <Box display="flex">
-            <Button colorScheme="red">Contact Us</Button>
+            <Link href="/contact">
+              <Button colorScheme="red">Contact Us</Button>
+            </Link>
           </Box>
         </Flex>
       </Box>

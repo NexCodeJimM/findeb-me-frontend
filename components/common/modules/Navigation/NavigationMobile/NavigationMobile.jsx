@@ -8,6 +8,8 @@ import {
   MenuList,
   Box,
   Flex,
+  Button,
+  Divider,
 } from "@chakra-ui/react";
 
 import Link from "next/link";
@@ -52,6 +54,23 @@ const NavigationMobile = () => {
             {navigationLinks.map((item) => (
               <NavigationLink key={item.title} {...item} />
             ))}
+
+            <Divider marginY="0.5rem" />
+
+            <Box padding="0.5rem">
+              <Link href="/contact">
+                <Button
+                  padding="1rem"
+                  backgroundColor="#F9A61A"
+                  _hover={{ backgroundColor: "#C77F05" }}
+                  color="white"
+                  fontSize="0.8rem"
+                  fontWeight="medium"
+                >
+                  Contact Us
+                </Button>
+              </Link>
+            </Box>
           </MenuList>
         </Menu>
       </Flex>

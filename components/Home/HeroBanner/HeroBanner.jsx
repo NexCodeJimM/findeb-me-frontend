@@ -76,38 +76,43 @@ const HeroBanner = () => {
 
           {/* Buttons */}
           <ButtonGroup marginTop="3rem">
-            <Button
-              padding="1.5rem"
-              position="relative"
-              bgGradient="linear(to-l, #f5b03d, #F9A61A, #f76d16 80%)"
-              overflow="hidden"
-              _before={{
-                position: "absolute",
-                content: `""`,
-                width: "100%",
-                height: "100%",
-                bgGradient: "linear(to-r, #f5b03d, #F9A61A, #f76d16 80%)",
-                transition: "1s",
-              }}
-              _hover={{
-                _before: { opacity: 0 },
-              }}
-              _active={{
-                bg: "#F9A61A",
-              }}
-            >
-              <Text zIndex="1" color={"white"}>
-                Read More
-              </Text>
-            </Button>
-            <Button
-              variant="outline"
-              colorScheme="white"
-              padding="1.5rem"
-              _hover={{ bg: "white", color: "gray.800" }}
-            >
-              Work With Us
-            </Button>
+            <Link href="/services">
+              <Button
+                padding="1.5rem"
+                position="relative"
+                bgGradient="linear(to-l, #f5b03d, #F9A61A, #f76d16 80%)"
+                overflow="hidden"
+                _before={{
+                  position: "absolute",
+                  content: `""`,
+                  width: "100%",
+                  height: "100%",
+                  bgGradient: "linear(to-r, #f5b03d, #F9A61A, #f76d16 80%)",
+                  transition: "1s",
+                }}
+                _hover={{
+                  _before: { opacity: 0 },
+                }}
+                _active={{
+                  bg: "#F9A61A",
+                }}
+              >
+                <Text zIndex="1" color={"white"}>
+                  Read More
+                </Text>
+              </Button>
+            </Link>
+
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                colorScheme="white"
+                padding="1.5rem"
+                _hover={{ bg: "white", color: "gray.800" }}
+              >
+                Work With Us
+              </Button>
+            </Link>
           </ButtonGroup>
         </Box>
 

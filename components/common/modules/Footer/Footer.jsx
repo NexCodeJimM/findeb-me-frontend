@@ -85,7 +85,7 @@ export default Footer;
 
 const FooterLink = ({ title, link }) => {
   return (
-    <Text marginBottom="0.5rem">
+    <Text marginBottom="0.5rem" _hover={{ color: "#F9A61A" }}>
       <Link href={link}>{title}</Link>
     </Text>
   );
@@ -126,6 +126,7 @@ const FooterSocials = ({ title, link, icon }) => {
           alignItems="center"
           gap="1rem"
           marginBottom="0.5rem"
+          _hover={{ color: "#F9A61A" }}
         >
           {icon} <span>{title}</span>
         </Text>
