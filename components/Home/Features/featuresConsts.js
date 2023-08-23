@@ -18,4 +18,10 @@ export const Features = [
     description:
       "Elevate your living spaces with our holistic approach to real estate investment, home decorations, repairs, and maintenance. Our dedicated team of experts is committed to enhancing your property's value, aesthetics, and functionality. Whether it's turning a house into a dream home or managing property investments, we're here to make your vision a reality.",
   },
+  {
+    title: "Sustainable Solutions",
+    photo: "/assets/images/feature4.jpg",
+    description:
+      "We take pride in being a leading provider of innovative and sustainable solutions for a greener world. With a deep commitment to environmental well-being, our company strives to make a positive impact through cutting-edge technologies and practices. From renewable energy solutions to eco-friendly products, we're dedicated to creating a brighter and more sustainable future for generations to come.",
+  },
 ];
