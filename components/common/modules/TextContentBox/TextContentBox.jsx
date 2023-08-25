@@ -11,6 +11,7 @@ const TextContentBox = ({ title, children }) => {
       <Text
         fontSize="1.5rem"
         fontWeight="light"
+        fontFamily="Roboto"
         color="gray.600"
         marginBottom="0.5rem"
       >

@@ -5,16 +5,10 @@ import {
   Box,
   Flex,
   Text,
-  Stack,
-  Divider,
-  useDisclosure,
   Popover,
   PopoverTrigger,
-  PopoverContent,
 } from "@chakra-ui/react";
-
 import Link from "next/link";
-
 import { navigationLinks } from "../navigationConsts";
 
 const NavigationDesktop = () => {

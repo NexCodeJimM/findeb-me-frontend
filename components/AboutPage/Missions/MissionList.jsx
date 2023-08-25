@@ -20,6 +20,7 @@ const MissionListing = () => {
           fontSize={{ base: "sm", sm: "md" }}
           color="#797979"
           marginBottom="0.5rem"
+          fontFamily="Roboto"
         >
           {mission.bullet}
         </ListItem>

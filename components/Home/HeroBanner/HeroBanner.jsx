@@ -1,40 +1,26 @@
 "use client";
 
-import { Box, Text, Button, ButtonGroup, Image } from "@chakra-ui/react";
+import { Box, Text, Image, Center } from "@chakra-ui/react";
 import Link from "next/link";
+import { FaPhone } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 const HeroBanner = () => {
   return (
     // Main Container
     <Box
+      minHeight={{ base: "85vh", sm: "90vh" }}
       position="relative"
-      minHeight={{ base: "70vh", sm: "90vh" }}
-      backgroundImage={`url('./assets/images/heroBg.jpeg')`}
-      backgroundPosition="center"
-      backgroundSize="cover"
-      backgroundAttachment="fixed"
+      backgroundColor="#F1F1F1"
+      overflow="hidden"
     >
-      {/* Tint */}
-      <Box
-        position="absolute"
-        width="100%"
-        height="100%"
-        opacity="0.9"
-        backgroundColor="red.900"
-      />
-
-      {/* Content */}
       <Box
         display="flex"
         flexDirection={{ base: "column", sm: "row" }}
-        // flexDirection="column"
         alignItems="center"
         justifyContent={{ base: "flex-start", sm: "space-between" }}
-        // justifyContent="center"
         maxWidth="1280px"
         position="absolute"
-        color="white"
-        fontWeight="light"
         left="0"
         right="0"
         bottom="0"
@@ -43,92 +29,155 @@ const HeroBanner = () => {
         padding="2rem"
       >
         {/* Left */}
-        <Box width="100%" textAlign="start">
+        <Box flex="1">
           <Text
-            fontSize={{ base: "4xl", sm: "5xl" }}
-            lineHeight="shorter"
-            marginBottom="1.5rem"
-            fontWeight="light"
+            fontSize={{ base: "3xl", sm: "6xl" }}
+            textStyle="h1"
+            letterSpacing="0.2rem"
+            color="gray.700"
           >
             Your Partner in{" "}
-            <span
+            <strong
               style={{
-                fontWeight: "bold",
-                bgGradient: "linear(to-l, #7928CA, #FF0080)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text", // For Safari compatibility
+                color: "transparent",
+                backgroundImage: "linear-gradient(to right, #ff512f, #f09819)",
               }}
             >
               Comprehensive Engineering
-            </span>{" "}
+            </strong>{" "}
             and{" "}
-            <span
+            <strong
               style={{
-                fontWeight: "bold",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text", // For Safari compatibility
+                color: "transparent",
+                backgroundImage:
+                  "linear-gradient(to right, #D4145A  , #FBB03B)",
               }}
             >
               Management Solutions
-            </span>
+            </strong>
           </Text>
 
-          <Text fontSize={{ base: "lg", sm: "2xl" }}>
+          <Text
+            fontSize={{ base: "sm", sm: "lg" }}
+            marginTop={{ base: "1rem", sm: "2rem" }}
+            textStyle="body"
+          >
             Discover a Path to Collective Growth: From Precise Project Framing
             to Expert Cost Engineering.
           </Text>
 
-          {/* Buttons */}
-          <ButtonGroup marginTop="3rem">
-            <Link href="/services">
-              <Button
-                padding="1.5rem"
-                position="relative"
-                bgGradient="linear(to-l, #f5b03d, #F9A61A, #f76d16 80%)"
-                overflow="hidden"
-                _before={{
-                  position: "absolute",
-                  content: `""`,
-                  width: "100%",
-                  height: "100%",
-                  bgGradient: "linear(to-r, #f5b03d, #F9A61A, #f76d16 80%)",
-                  transition: "1s",
-                }}
+          <Box
+            display="flex"
+            gap={{ base: "1rem", sm: "2rem" }}
+            marginTop={{ base: "2rem", sm: "4rem" }}
+          >
+            <Link href="/about-us">
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyItems="center"
+                gap="1rem"
+                backgroundColor="#F9A61A"
+                transition="0.3s ease-in-out"
                 _hover={{
-                  _before: { opacity: 0 },
+                  backgroundColor: "#C77F05",
                 }}
-                _active={{
-                  bg: "#F9A61A",
-                }}
+                padding={{ base: "0.5rem 1rem", sm: "1rem" }}
+                color="white"
+                rounded="lg"
               >
-                <Text zIndex="1" color={"white"}>
-                  Read More
+                <Text
+                  textStyle="button"
+                  letterSpacing="0.1rem"
+                  fontSize={{ base: "sm", sm: "md" }}
+                >
+                  Learn More
                 </Text>
-              </Button>
+                <FaArrowRight />
+              </Box>
             </Link>
 
             <Link href="/contact">
-              <Button
-                variant="outline"
-                colorScheme="white"
-                padding="1.5rem"
-                _hover={{ bg: "white", color: "gray.800" }}
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyItems="center"
+                gap="1rem"
+                backgroundColor="blackAlpha.50"
+                transition="0.3s ease-in-out"
+                _hover={{
+                  backgroundColor: "blackAlpha.100",
+                }}
+                padding={{ base: "0.5rem 1rem", sm: "1rem" }}
+                rounded="lg"
+                color="gray.700"
               >
-                Work With Us
-              </Button>
+                <Text
+                  textStyle="button"
+                  letterSpacing="0.1rem"
+                  fontSize={{ base: "sm", sm: "md" }}
+                >
+                  Get in Touch
+                </Text>
+                <FaPhone />
+              </Box>
             </Link>
-          </ButtonGroup>
+          </Box>
         </Box>
 
         {/* Right */}
-        <Box
-          width="100%"
-          padding="2rem"
-          marginTop={{ base: "2rem", sm: "2rem" }}
-          display="flex"
-          justifyContent="center"
-        >
-          <Image
-            src="/assets/images/headerphoto.png"
-            alt="header-photo"
-            display={{ base: "none", sm: "block" }}
-          />
+        <Box flex="1" position="relative">
+          <Center>
+            <Box
+              width={{ base: "70%", sm: "92%" }}
+              position="relative"
+              zIndex="5"
+              opacity="1"
+            >
+              <Image
+                width="100%"
+                height="100%"
+                src="/assets/images/header-new.png"
+              />
+            </Box>
+          </Center>
+
+          <Box
+            width={{ base: "100%", sm: "150%" }}
+            height="150%"
+            position="absolute"
+            left="0"
+            top="0"
+            right="0"
+            bottom="0"
+            zIndex="4"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            opacity="0.3"
+          >
+            {/* <Image width="100%" height="100%" src="/assets/svg/blob.svg" /> */}
+            <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <clipPath id="a">
+                  <path
+                    fill="currentColor"
+                    d="M832.5 613Q726 726 613 790.5T409.5 768Q319 681 174 590.5t-49-230Q221 221 360.5 233t270 9Q761 239 850 369.5T832.5 613Z"
+                  />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#a)">
+                <path
+                  fill="#ec3030"
+                  d="M832.5 613Q726 726 613 790.5T409.5 768Q319 681 174 590.5t-49-230Q221 221 360.5 233t270 9Q761 239 850 369.5T832.5 613Z"
+                />
+              </g>
+            </svg>
+          </Box>
         </Box>
       </Box>
     </Box>

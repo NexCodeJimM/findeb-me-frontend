@@ -24,10 +24,8 @@ const PageHeader = ({ photo, title, desc }) => {
       {/* Content */}
       <Box
         display="flex"
-        // flexDirection={{ base: "column", sm: "row" }}
         flexDirection="column"
         alignItems="center"
-        // justifyContent={{ base: "flex-start", sm: "space-between" }}
         justifyContent="center"
         maxWidth="1280px"
         position="absolute"
@@ -48,11 +46,14 @@ const PageHeader = ({ photo, title, desc }) => {
             marginBottom="1.5rem"
             fontWeight="light"
             textTransform="uppercase"
+            fontFamily="Aileron"
           >
             {title}
           </Text>
 
-          <Text fontSize={{ base: "lg", sm: "2xl" }}>{desc}</Text>
+          <Text fontFamily="Roboto" fontSize={{ base: "lg", sm: "2xl" }}>
+            {desc}
+          </Text>
         </Box>
       </Box>
     </Box>

@@ -1,4 +1,12 @@
-import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsTwitter,
+  BsInstagram,
+  BsPinMapFill,
+  BsLinkedin,
+} from "react-icons/bs";
+import { IoMdMail } from "react-icons/io";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export const about = [
   {
@@ -33,9 +41,9 @@ export const socials = [
     icon: <BsFacebook />,
   },
   {
-    title: "Twitter",
-    link: "https://twitter.com/",
-    icon: <BsTwitter />,
+    title: "Linked In",
+    link: "https://linkedin.com/",
+    icon: <BsLinkedin />,
   },
   {
     title: "Instagram",
@@ -46,13 +54,15 @@ export const socials = [
 
 export const brand = [
   {
-    photo: "/assets/images/logo.png",
-    email: "info@findebme.com",
-
-    phone: "+971 50 891 5830",
-
-    phone: "+971 4 580 8141",
-
-    office: "P.O Box 112037 2706 Prime Tower Business Bay, Dubai, UAE",
+    title: "info@findebme.com",
+    icon: <IoMdMail />,
+  },
+  {
+    title: "(+971) 50 891 5830",
+    icon: <FaPhoneAlt />,
+  },
+  {
+    title: "P.O Box 112037 2706 Prime Tower Business Bay, Dubai, UAE",
+    icon: <BsPinMapFill />,
   },
 ];

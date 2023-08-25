@@ -31,8 +31,8 @@ const Contact = () => {
             flexDirection="column"
             alignItems="center"
           >
-            {contactDetails.map((item) => (
-              <ContactCard key={item.title} {...item} />
+            {contactDetails.map((contact, index) => (
+              <ContactCard key={index} {...contact} />
             ))}
           </GridItem>
 
@@ -54,7 +54,7 @@ const Contact = () => {
           textAlign="center"
         >
           <Text
-            fontWeight="bold"
+            textStyle="sectionHeader"
             fontSize="3xl"
             marginBottom="1rem"
             color="gray.700"
@@ -62,7 +62,7 @@ const Contact = () => {
             Find us on Google Maps
           </Text>
 
-          <Text color="gray.500">
+          <Text textStyle="sectionBody" color="gray.500">
             Navigate to our precise address effortlessly and explore our
             physical presence with the convenience of Google Maps. Get accurate
             directions, explore nearby landmarks, and embark on a seamless
@@ -111,12 +111,17 @@ const ContactCard = ({ label, title, icon }) => {
         <Text
           marginBottom="0.3rem"
           fontWeight="bold"
+          fontFamily="Aileron"
           color="gray.800"
           fontSize={{ base: "sm", sm: "md" }}
         >
           {label}
         </Text>
-        <Text color="gray.500" fontSize={{ base: "sm", sm: "md" }}>
+        <Text
+          fontFamily="Roboto"
+          color="gray.500"
+          fontSize={{ base: "sm", sm: "md" }}
+        >
           {title}
         </Text>
       </Box>
