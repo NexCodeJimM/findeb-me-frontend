@@ -1,7 +1,6 @@
 import {
   Flex,
   Box,
-  Image,
   Text,
   UnorderedList,
   ListItem,
@@ -12,7 +11,6 @@ import {
   TabPanel,
 } from "@chakra-ui/react";
 import { serviceLists } from "./serviceConsts";
-import PageHeader from "@/components/common/modules/PageHeader/PageHeader";
 
 const ServiceList = () => {
   return (
@@ -31,7 +29,7 @@ const ServicesListing = () => {
       flexDirection={{ base: "column", sm: "row" }}
       gap="3rem"
     >
-      <TabList>
+      <TabList fontFamily="Aileron">
         {serviceLists.map((service, index) => (
           <Tab key={index}>{service.title}</Tab>
         ))}
@@ -45,6 +43,7 @@ const ServicesListing = () => {
               fontSize={{ base: "2xl", sm: "4xl" }}
               casing="uppercase"
               fontWeight="bold"
+              fontFamily="Aileron"
               color="#F9A61A"
             >
               {service.title}
@@ -64,6 +63,7 @@ const ServicesListing = () => {
               color="#797979"
               marginTop="2rem"
               fontSize={{ base: "sm", sm: "md" }}
+              fontFamily="Roboto"
             >
               {service?.description}
             </Text>
@@ -72,6 +72,7 @@ const ServicesListing = () => {
               color="#797979"
               marginTop="2rem"
               fontSize={{ base: "sm", sm: "md" }}
+              fontFamily="Roboto"
             >
               Below are the services we offer:
             </Text>
@@ -80,6 +81,7 @@ const ServicesListing = () => {
               fontSize={{ base: "sm", sm: "md" }}
               marginTop="2rem"
               color="#797979"
+              fontFamily="Roboto"
             >
               {service.tasks.map((task, taskIndex) => (
                 <ListItem

@@ -17,7 +17,8 @@ const AboutUs = () => {
         <Box display="flex" flexDirection="column" alignItems="center">
           <Text
             fontSize={{ base: "4xl", sm: "5xl" }}
-            fontWeight="light"
+            fontFamily="Aileron"
+            fontWeight="semibold"
             color="#F9A61A"
           >
             Who We Are
@@ -33,7 +34,7 @@ const AboutUs = () => {
         </Box>
 
         {/* About Desc */}
-        <Flex flexDirection="column" marginTop="1rem">
+        <Flex flexDirection="column" marginTop="1rem" fontFamily="Roboto">
           <Box color="#797979" lineHeight="tall">
             <Text>
               FINDEB is a business corporation specialized and respected
@@ -81,12 +82,17 @@ const AboutUs = () => {
                 fontSize={{ base: "4xl", sm: "5xl" }}
                 lineHeight="shorter"
                 marginBottom="1rem"
-                fontWeight="light"
+                fontFamily="Aileron"
+                fontWeight="semibold"
                 color="#F9A61A"
               >
                 Our Mission
               </Text>
-              <Text color="#797979" fontSize={{ base: "md", sm: "lg" }}>
+              <Text
+                color="#797979"
+                fontSize={{ base: "md", sm: "lg" }}
+                fontFamily="Roboto"
+              >
                 To Improve overall project performance through:
               </Text>
 
@@ -150,6 +156,7 @@ const AboutUs = () => {
             color="white"
             fontSize={{ base: "5xl", sm: "8xl" }}
             fontWeight="light"
+            fontFamily="Aileron"
           >
             Our Vision
           </Text>
@@ -158,6 +165,7 @@ const AboutUs = () => {
             color="white"
             fontSize={{ base: "xl", sm: "3xl" }}
             fontWeight="light"
+            fontFamily="Roboto"
           >
             To be synonymous with excellence in overall project delivery.
           </Text>

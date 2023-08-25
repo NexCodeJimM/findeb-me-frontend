@@ -21,8 +21,9 @@ const Footer = () => {
         >
           {/* Brand */}
           <Flex flexDirection="column">
-            {brand.map((item) => (
-              <FooterBrand key={item} {...item} />
+            <Image src="/assets/images/logo.png" alt="logo" width="200px" />
+            {brand.map((item, index) => (
+              <FooterBrand key={index} {...item} />
             ))}
           </Flex>
 
@@ -31,8 +32,8 @@ const Footer = () => {
             <FooterHeader title="Our Company" />
 
             {/* About Links */}
-            {about.map((item) => (
-              <FooterLink key={item.name} {...item} />
+            {about.map((item, index) => (
+              <FooterLink key={index} {...item} />
             ))}
           </Flex>
 
@@ -41,8 +42,8 @@ const Footer = () => {
             <FooterHeader title="Legal" />
 
             {/* Legal Links */}
-            {legal.map((item) => (
-              <FooterLink key={item.name} {...item} />
+            {legal.map((item, index) => (
+              <FooterLink key={index} {...item} />
             ))}
           </Flex>
 
@@ -51,8 +52,8 @@ const Footer = () => {
             <FooterHeader title="Follow Us" />
 
             {/* Socials Links */}
-            {socials.map((item) => (
-              <FooterSocials key={item} {...item} />
+            {socials.map((item, index) => (
+              <FooterSocials key={index} {...item} />
             ))}
           </Flex>
         </SimpleGrid>
@@ -69,7 +70,7 @@ const Footer = () => {
         color="white"
       >
         {/* Copyright */}
-        <Text fontSize="xs" textAlign="center">
+        <Text fontSize="xs" textAlign="center" fontFamily="Aileron">
           Copyright 2023 ©{" "}
           <Link href="https://findebme.com" target="_blank">
             FINDEB FZCO
@@ -85,33 +86,41 @@ export default Footer;
 
 const FooterLink = ({ title, link }) => {
   return (
-    <Text marginBottom="0.5rem" _hover={{ color: "#F9A61A" }}>
-      <Link href={link}>{title}</Link>
-    </Text>
+    <Link href={link}>
+      <Text
+        marginBottom="0.5rem"
+        _hover={{ color: "#F9A61A" }}
+        fontFamily="Aileron"
+      >
+        {title}
+      </Text>
+    </Link>
   );
 };
 
 const FooterHeader = ({ title }) => {
   return (
-    <Text as="h4" fontWeight="bold" fontSize="xl" marginBottom="1rem">
+    <Text
+      as="h4"
+      fontWeight="bold"
+      fontSize="xl"
+      marginBottom="1rem"
+      fontFamily="Roboto"
+    >
       {title}
     </Text>
   );
 };
 
-const FooterBrand = ({ photo, email, office, phone }) => {
+const FooterBrand = ({ title, icon }) => {
   return (
     <>
-      <Image src={photo} alt="logo" width="200px" />
-      <Text fontSize="md" marginTop="1rem">
-        {email}
-      </Text>
-      <Text fontSize="md" marginTop="0.5rem">
-        {phone}
-      </Text>
-      <Text fontSize="md" marginTop="0.5rem">
-        {office}
-      </Text>
+      <Box fontFamily="Aileron">
+        <Box display="flex" alignItems="center" gap="0.5rem" marginTop="1rem">
+          <Text>{icon}</Text>
+          <Text fontSize="md">{title}</Text>
+        </Box>
+      </Box>
     </>
   );
 };
@@ -122,6 +131,7 @@ const FooterSocials = ({ title, link, icon }) => {
       <Link href={link} target="_blank">
         <Text
           fontSize="1rem"
+          fontFamily="Aileron"
           display="flex"
           alignItems="center"
           gap="1rem"
