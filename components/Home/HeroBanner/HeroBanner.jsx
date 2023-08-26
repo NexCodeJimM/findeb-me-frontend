@@ -1,10 +1,9 @@
 "use client";
 
-import { Box, Text, Center } from "@chakra-ui/react";
+import { Box, Text, Image, Center } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaPhone } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
-import Image from "next/image";
 
 const HeroBanner = () => {
   return (
@@ -140,8 +139,8 @@ const HeroBanner = () => {
               opacity="1"
             >
               <Image
-                width={700}
-                height={700}
+                width="100%"
+                height="100%"
                 src="/assets/images/header-new.png"
                 alt="header-image"
                 loading="eager"
