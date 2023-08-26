@@ -7,7 +7,7 @@ const CallToAction = () => {
     <Box
       backgroundColor="#f1f1f1"
       position="relative"
-      backgroundImage={`url('./assets/images/beyond-boundaries.jpg')`}
+      backgroundImage={`url('./assets/images/beyond1.jpg')`}
       backgroundSize="cover"
       backgroundPosition="top"
       minHeight={{ base: "60vh", sm: "70vh" }}

@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <>
       <PageHeader
-        photo={`url('./assets/images/headercover1.jpeg')`}
+        photo={`url('./assets/images/about-header1.jpg')`}
         title="About FINDEB"
         desc="Get to know who we are and what we do."
       />
@@ -110,9 +110,10 @@ const AboutUs = () => {
               justifyContent="center"
             >
               <Image
-                src="/assets/images/mission1.jpeg"
+                src="/assets/images/mission2.jpg"
                 alt="mission-image"
                 borderRadius="lg"
+                loading="eager"
               />
             </Box>
           </Box>
@@ -123,7 +124,7 @@ const AboutUs = () => {
       <Box
         position="relative"
         minHeight={{ base: "40vh", sm: "50vh" }}
-        backgroundImage={`url('./assets/images/vision1.jpeg')`}
+        backgroundImage={`url('./assets/images/vision2.jpg')`}
         backgroundPosition="center"
         backgroundSize="cover"
         backgroundAttachment="fixed"

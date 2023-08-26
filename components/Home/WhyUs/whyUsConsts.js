@@ -5,18 +5,18 @@ export const whyUsList = [
   },
   {
     title: "Environmental Vanguard",
-    icon: "/assets/images/environmental.jpg",
+    icon: "/assets/images/environmental1.jpg",
   },
   {
     title: "Global Collaboration",
-    icon: "/assets/images/global.jpg",
+    icon: "/assets/images/global1.jpg",
   },
   {
     title: "Innovation Redefined",
-    icon: "/assets/images/bulb.jpg",
+    icon: "/assets/images/bulb1.jpg",
   },
   {
     title: "Holistic Excellence",
-    icon: "/assets/images/holistic.jpg",
+    icon: "/assets/images/holistic1.jpg",
   },
 ];

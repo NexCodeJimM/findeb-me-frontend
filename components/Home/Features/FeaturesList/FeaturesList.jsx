@@ -69,6 +69,7 @@ const FeaturesLists = ({ title, photo, description, index }) => {
           height="100%"
           borderRadius="md"
           objectFit="cover"
+          loading="eager"
         />
       </Box>
 

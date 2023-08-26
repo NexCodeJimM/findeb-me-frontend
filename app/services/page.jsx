@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <>
       <PageHeader
-        photo={`url('./assets/images/services.jpeg')`}
+        photo={`url('./assets/images/services1.jpg')`}
         title="Our Services"
         desc="Embark on a journey of excellence with our comprehensive suite of services."
       />

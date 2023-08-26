@@ -5,7 +5,7 @@ const UnleashingPossibilities = () => {
     <Box
       backgroundColor="#f1f1f1"
       position="relative"
-      backgroundImage={`url('./assets/images/unleash.jpg')`}
+      backgroundImage={`url('./assets/images/unleash1.jpg')`}
       backgroundSize="cover"
       backgroundPosition="center"
       minHeight={{ base: "60vh", sm: "50vh" }}

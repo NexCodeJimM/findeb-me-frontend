@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <>
       <PageHeader
-        photo={`url('./assets/images/contact.jpeg')`}
+        photo={`url('./assets/images/contact1.jpg')`}
         title="Contact Us"
         desc="If you have any questions, we're just one email away!"
       />
