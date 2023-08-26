@@ -30,6 +30,7 @@ const Card = ({ title, description, icon }) => {
             filter: isHovered ? "grayscale(0)" : "grayscale(100%)",
             transition: "filter 0.3s ease-in-out",
           }}
+          loading="eager"
         />
       </Box>
       <Box paddingX="1rem">

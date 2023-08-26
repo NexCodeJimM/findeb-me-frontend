@@ -5,7 +5,11 @@ const GlobalFootprint = () => {
     <Box maxWidth="1280px" margin="0 auto" paddingY="5rem" paddingX="2rem">
       <Grid templateColumns="repeat(6, 1fr)" gap="5">
         <GridItem colSpan={{ base: 6, sm: 3 }}>
-          <Image src="/assets/images/worldmap.png" />
+          <Image
+            src="/assets/images/worldmap.png"
+            alt="world-map"
+            loading="eager"
+          />
         </GridItem>
 
         <GridItem colSpan={{ base: 6, sm: 3 }}>

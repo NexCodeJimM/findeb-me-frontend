@@ -1,6 +1,5 @@
 import { Box, Text, Flex, Image } from "@chakra-ui/react";
 import { whyUsList } from "../whyUsConsts";
-import Link from "next/link";
 import Card from "@/components/common/Card/Card";
 
 const WhyUsCards = () => {

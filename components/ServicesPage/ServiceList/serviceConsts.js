@@ -1,7 +1,7 @@
 export const serviceLists = [
   {
     title: "Project Framing & Definition",
-    photo: "/assets/images/service1.jpeg",
+    photo: "/assets/images/service1-1.jpg",
     tasks: [
       "Development  of detailed project plans.",
       "Establishment of a project team.",
@@ -21,7 +21,7 @@ export const serviceLists = [
   },
   {
     title: "Engineering Management",
-    photo: "/assets/images/service2.jpeg",
+    photo: "/assets/images/service2-1.jpg",
     tasks: [
       "Engineering discipline coordination & integration.",
       "Architectural.",
@@ -35,7 +35,7 @@ export const serviceLists = [
   },
   {
     title: "Health, Safety & Environment",
-    photo: "/assets/images/service3.jpeg",
+    photo: "/assets/images/service3-1.jpg",
     tasks: [
       "Safety management.",
       "Safety Agent function.",
@@ -46,7 +46,7 @@ export const serviceLists = [
   },
   {
     title: "Quality Management",
-    photo: "/assets/images/service4.jpeg",
+    photo: "/assets/images/service4-1.jpg",
     tasks: [
       "Establish quality parameters.",
       "Review & approval of contractor quality control plan.",
@@ -57,7 +57,7 @@ export const serviceLists = [
   },
   {
     title: "Project Support Services",
-    photo: "/assets/images/service5.jpeg",
+    photo: "/assets/images/service5-1.jpg",
     tasks: [
       "Project office design, implementation & operation.",
       "Project reporting & administration services.",
@@ -69,7 +69,7 @@ export const serviceLists = [
   },
   {
     title: "Cost Engineering & Control",
-    photo: "/assets/images/service6.png",
+    photo: "/assets/images/service6-1.jpg",
     tasks: [
       "Establish cost baseline.",
       "Cash flow management.",
