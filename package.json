@@ -19,7 +19,6 @@
     "@googlemaps/js-api-loader": "^1.16.2",
     "@sendgrid/mail": "^7.7.0",
     "autoprefixer": "10.4.14",
-    "axios": "^1.4.0",
     "encoding": "^0.1.13",
     "framer-motion": "^10.15.1",
     "next": "13.4.13",
@@ -30,7 +29,6 @@
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
     "resend": "^1.0.0",
-    "sass": "^1.66.1",
     "tailwindcss": "3.3.3"
   }
 }
