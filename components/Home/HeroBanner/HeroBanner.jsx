@@ -143,7 +143,7 @@ const HeroBanner = () => {
                 width={700}
                 height={700}
                 src="/assets/images/header-new.png"
-                alt="Header Image"
+                alt="header-image"
                 loading="eager"
               />
             </Box>
