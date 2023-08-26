@@ -133,7 +133,7 @@ const HeroBanner = () => {
         <Box flex="1" position="relative">
           <Center>
             <Box
-              width={{ base: "70%", sm: "92%" }}
+              width={{ base: "70%", sm: "100%" }}
               position="relative"
               zIndex="5"
               opacity="1"
