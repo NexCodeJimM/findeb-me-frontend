@@ -1,3 +1,5 @@
+import { GoogleProvider } from "./providers";
+
 export const metadata = {
   title: "Contact Us | Get in Touch with FINDEB",
   description:
@@ -6,5 +8,9 @@ export const metadata = {
     "Contact FINDEB, Design Services, Engineering Solutions, Project Management, Get in Touch, Contact Information, Collaborate, Expert Guidance, Comprehensive Support, Design, Engineering, Innovative Solutions, Inquiry, Project Discussion.",
 };
 export default function ContactLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <GoogleProvider>{children}</GoogleProvider>
+    </>
+  );
 }
