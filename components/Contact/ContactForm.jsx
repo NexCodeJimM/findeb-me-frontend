@@ -28,11 +28,13 @@ const ContactForm = () => {
 
   const toast = useToast();
 
+  // Form Validation
   const validateForm = () => {
     const { name, phone, email, subject, message, accept } = data;
     return name && phone && email && subject && message && accept;
   };
 
+  // Sending Email Action
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -168,6 +170,7 @@ const ContactForm = () => {
             </Text>
           </Checkbox>
         </FormControl>
+
         <Button
           type="submit"
           backgroundColor="#F9A61A"
