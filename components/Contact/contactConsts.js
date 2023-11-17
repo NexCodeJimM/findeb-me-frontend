@@ -8,11 +8,16 @@ export const contactDetails = [
   },
   {
     label: "Phone Number",
-    title: ["+971 50 891 5830", <br />, "+971 50 185 4534"],
+    title: [
+      "+971 50 891 5830",
+      <br />,
+      "+971 50 185 4534",
+      <br />,
+      "+971 4 580 8141",
+    ],
     icon: <TbPhone />,
   },
   {
-
     label: "Location",
     title:
       "P.O Box 112037 2706 Prime Tower, Business Bay, Dubai, United Arab Emirates",

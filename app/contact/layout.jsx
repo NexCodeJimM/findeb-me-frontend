@@ -1,3 +1,4 @@
+import NavigationComponent from "@/components/common/modules/NavigationComponent/NavigationComponent";
 import { GoogleProvider } from "./providers";
 
 export const metadata = {
@@ -10,7 +11,9 @@ export const metadata = {
 export default function ContactLayout({ children }) {
   return (
     <>
-      <GoogleProvider>{children}</GoogleProvider>
+      <GoogleProvider>
+        <NavigationComponent>{children}</NavigationComponent>
+      </GoogleProvider>
     </>
   );
 }
