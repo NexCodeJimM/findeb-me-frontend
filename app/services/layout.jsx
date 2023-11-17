@@ -1,3 +1,5 @@
+import NavigationComponent from "@/components/common/modules/NavigationComponent/NavigationComponent";
+
 export const metadata = {
   title: "Our Services | Discover Our Wide Range Of Services",
   description:
@@ -6,5 +8,9 @@ export const metadata = {
     "Project Management Services, Comprehensive Solutions, Project Framing, Detailed Plans, Project Team Establishment, Engineering Coordination, Architectural, Civil & Structural, Mechanical, Electrical, Health & Safety Management, Safety Agent, Environmental Control, Quality Management, Quality Parameters, Contractor Review, Inspection Management, Project Support Services, Office Design & Operation, Project Reporting, Guidelines & Manuals, Planning & Scheduling, Cost Engineering, Financial Management, Cost Baseline, Cash Flow Management, Payment Certification, Change Control, Seamless Project Realization, Expert Services.",
 };
 export default function ServicesLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <NavigationComponent>{children}</NavigationComponent>
+    </>
+  );
 }

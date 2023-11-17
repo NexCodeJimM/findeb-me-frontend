@@ -1,3 +1,5 @@
+import NavigationComponent from "@/components/common/modules/NavigationComponent/NavigationComponent";
+
 export const metadata = {
   title: "Privacy Policy | Your Data Protection Matters to FINDEB",
   description:
@@ -6,5 +8,9 @@ export const metadata = {
     "Privacy Policy, Data Protection, Confidentiality, Data Security, Information Privacy, User Data, Personal Data, Data Collection, Data Usage, Data Protection Measures, Privacy Assurance.",
 };
 export default function PrivacyLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <NavigationComponent>{children}</NavigationComponent>
+    </>
+  );
 }

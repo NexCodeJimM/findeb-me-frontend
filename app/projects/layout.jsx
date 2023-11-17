@@ -1,3 +1,5 @@
+import NavigationComponent from "@/components/common/modules/NavigationComponent/NavigationComponent";
+
 export const metadata = {
   title: "Explore Our Portfolio of Projects",
   description:
@@ -6,5 +8,9 @@ export const metadata = {
     "Project Portfolio, Diverse Projects, Design Expertise, Engineering Excellence, Project Management, Concept to Completion, Innovation Showcase, Industry Expertise, Precision, Excellence in Execution.",
 };
 export default function ProjectLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <NavigationComponent>{children}</NavigationComponent>
+    </>
+  );
 }

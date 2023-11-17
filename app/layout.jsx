@@ -1,9 +1,6 @@
-import Navigation from "@/components/common/modules/Navigation/Navigation";
 import { Providers } from "./providers";
-import Footer from "@/components/common/modules/Footer/Footer";
-import BackToTop from "@/components/common/modules/BackToTop/BackToTop";
+
 import "@/styles/globals.css";
-import Script from "next/script";
 
 export const metadata = {
   title: {
@@ -37,12 +34,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning={true}>
-        <Providers>
-          <Navigation />
-          {children}
-          <BackToTop />
-          <Footer />
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

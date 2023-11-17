@@ -1,12 +1,12 @@
 import {
   BsFacebook,
-  BsTwitter,
   BsInstagram,
   BsPinMapFill,
   BsLinkedin,
 } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
+import { IoMdPhonePortrait } from "react-icons/io";
 
 export const about = [
   {
@@ -59,6 +59,10 @@ export const brand = [
   },
   {
     title: "(+971) 50 891 5830",
+    icon: <IoMdPhonePortrait />,
+  },
+  {
+    title: "(+971) 4 580 8141",
     icon: <FaPhoneAlt />,
   },
   {

@@ -1,3 +1,5 @@
+import NavigationComponent from "@/components/common/modules/NavigationComponent/NavigationComponent";
+
 export const metadata = {
   title: "About Us",
   description:
@@ -6,5 +8,9 @@ export const metadata = {
     "Design Services, Engineering Solutions, Project Management, Specialized Corporation, Diverse Industries, Environmental Sustainability, Innovative Concepts, Renewable Energy, Project Performance, Excellence in Delivery, Multifaceted Functions, Collaborative Partnerships, Europe and Africa Projects, Entrepreneurial Environment, Talent Cultivation, Global Network, Project Management Expertise, Comprehensive Project Delivery.",
 };
 export default function AboutLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <NavigationComponent>{children}</NavigationComponent>
+    </>
+  );
 }
