@@ -11,8 +11,6 @@ export const contactDetails = [
     title: [
       "+971 50 891 5830",
       <br />,
-      "+971 50 185 4534",
-      <br />,
       "+971 4 580 8141",
     ],
     icon: <TbPhone />,
